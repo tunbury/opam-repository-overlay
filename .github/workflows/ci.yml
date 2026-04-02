@@ -75,7 +75,7 @@ jobs:
 
       - name: Filter solvable packages
         run: |
-          jq -n --argjson pkgs "$(jq -s '[.[] | select(.status == "solution") | .name]' results/*.json)" \
+          jq -n --argjson pkgs "$(find results -name '*.json' -exec cat {} + | jq -s '[.[] | select(.status == "solution") | .name]')" \
             '{packages: $pkgs}' > solvable.json
           echo "Solvable: $(jq '.packages | length' solvable.json) / $(jq '.packages | length' packages.json)"
 
@@ -96,12 +96,14 @@ jobs:
         if: always()
         run: |
           # Build current results index in a single jq pass
-          jq -s 'map({name, status, log: (.log // "" | split("\n") | .[-5:] | join(" "))})' \
-            results/*.json > /tmp/current.json
+          find results -name '*.json' -exec cat {} + \
+            | jq -s 'map({name, status, log: (.log // "" | split("\n") | .[-5:] | join(" "))})' \
+            > /tmp/current.json
 
           # Build previous results index if available
           if ls previous-results/*.json 1>/dev/null 2>&1; then
-            jq -s 'map({name, status}) | INDEX(.name)' previous-results/*.json > /tmp/previous.json
+            find previous-results -name '*.json' -exec cat {} + \
+              | jq -s 'map({name, status}) | INDEX(.name)' > /tmp/previous.json
           else
             echo '{}' > /tmp/previous.json
           fi
