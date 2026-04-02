@@ -56,7 +56,7 @@ jobs:
             --opam-repository opam-repository \
             --opam-repository . \
             --ocaml-version ocaml.5.4.1 \
-            --os-distribution ubuntu --os-family debian --os-version 24.04 \
+            --os-distribution debian --os-family debian --os-version 13 \
             --json packages.json
 
       - name: Solve packages (dry-run)
@@ -67,7 +67,7 @@ jobs:
             --opam-repository opam-repository \
             --opam-repository . \
             --ocaml-version ocaml.5.4.1 \
-            --os-distribution ubuntu --os-family debian --os-version 24.04 \
+            --os-distribution debian --os-family debian --os-version 13 \
             --json results \
             --dry-run \
             --fork 256 \
@@ -86,7 +86,7 @@ jobs:
             --opam-repository opam-repository \
             --opam-repository . \
             --ocaml-version ocaml.5.4.1 \
-            --os-distribution ubuntu --os-family debian --os-version 24.04 \
+            --os-distribution debian --os-family debian --os-version 13 \
             --json results \
             --fork 64 \
             @solvable.json
