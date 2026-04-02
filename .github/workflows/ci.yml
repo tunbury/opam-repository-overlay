@@ -73,6 +73,12 @@ jobs:
             --fork 256 \
             @packages.json
 
+      - name: Filter solvable packages
+        run: |
+          jq -n --argjson pkgs "$(find results -name '*.json' -exec cat {} + | jq -s '[.[] | select(.status == "solution") | .name]')" \
+            '{packages: $pkgs}' > solvable.json
+          echo "Solvable: $(jq '.packages | length' solvable.json) / $(jq '.packages | length' packages.json)"
+
       - name: Build packages
         run: |
           day10 health-check \
@@ -83,146 +89,113 @@ jobs:
             --os-distribution ubuntu --os-family debian --os-version 24.04 \
             --json results \
             --fork 64 \
-            @packages.json
+            @solvable.json
 
       - name: Generate summary
         id: summary
         if: always()
         run: |
-          echo "## Build Results" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          # Build current results index in a single jq pass
+          find results -name '*.json' -exec cat {} + \
+            | jq -s 'map({name, status, log: (.log // "" | split("\n") | .[-5:] | join(" "))})' \
+            > /tmp/current.json
 
-          total=0; success=0; failed=0; no_solution=0; dep_failed=0
-          for f in results/*.json; do
-            [ -f "$f" ] || continue
-            total=$((total + 1))
-            s=$(jq -r '.status' "$f")
-            case "$s" in
-              success) success=$((success + 1)) ;;
-              failure) failed=$((failed + 1)) ;;
-              no_solution) no_solution=$((no_solution + 1)) ;;
-              dependency_failed) dep_failed=$((dep_failed + 1)) ;;
-            esac
-          done
-
-          echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Total packages | $total |" >> $GITHUB_STEP_SUMMARY
-          echo "| :white_check_mark: Success | $success |" >> $GITHUB_STEP_SUMMARY
-          echo "| :x: Failed | $failed |" >> $GITHUB_STEP_SUMMARY
-          echo "| :warning: No solution | $no_solution |" >> $GITHUB_STEP_SUMMARY
-          echo "| :fast_forward: Dependency failed | $dep_failed |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          if [ "$failed" -gt 0 ]; then
-            echo "<details><summary>Failed packages ($failed)</summary>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "| Package | Log (last 5 lines) |" >> $GITHUB_STEP_SUMMARY
-            echo "|---------|-----|" >> $GITHUB_STEP_SUMMARY
-            for f in results/*.json; do
-              [ -f "$f" ] || continue
-              s=$(jq -r '.status' "$f")
-              if [ "$s" = "failure" ]; then
-                name=$(jq -r '.name' "$f")
-                log=$(jq -r '.log // ""' "$f" | tail -5 | sed 's/|/\\|/g' | tr '\n' ' ')
-                echo "| \`$name\` | \`$log\` |" >> $GITHUB_STEP_SUMMARY
-              fi
-            done
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "</details>" >> $GITHUB_STEP_SUMMARY
-          fi
-
-          # Diff against previous results
-          newly_broken=""
+          # Build previous results index if available
           if ls previous-results/*.json 1>/dev/null 2>&1; then
-            echo "## Changes from previous run" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-
-            newly_fixed=""
-            newly_added=""
-            newly_removed=""
-
-            # Check current results against previous
-            for f in results/*.json; do
-              [ -f "$f" ] || continue
-              name=$(jq -r '.name' "$f")
-              cur=$(jq -r '.status' "$f")
-              prev_file="previous-results/$(basename "$f")"
-              if [ -f "$prev_file" ]; then
-                prev=$(jq -r '.status' "$prev_file")
-                if [ "$prev" != "success" ] && [ "$cur" = "success" ]; then
-                  newly_fixed="$newly_fixed\n- \`$name\` ($prev -> success)"
-                elif [ "$prev" = "success" ] && [ "$cur" != "success" ]; then
-                  newly_broken="$newly_broken\n- \`$name\` (success -> $cur)"
-                fi
-              else
-                newly_added="$newly_added\n- \`$name\` ($cur)"
-              fi
-            done
-
-            # Check for removed packages
-            for f in previous-results/*.json; do
-              [ -f "$f" ] || continue
-              name=$(jq -r '.name' "$f")
-              cur_file="results/$(basename "$f")"
-              if [ ! -f "$cur_file" ]; then
-                prev=$(jq -r '.status' "$f")
-                newly_removed="$newly_removed\n- \`$name\` (was $prev)"
-              fi
-            done
-
-            has_changes=false
-            if [ -n "$newly_broken" ]; then
-              has_changes=true
-              echo ":rotating_light: **Newly broken:**" >> $GITHUB_STEP_SUMMARY
-              echo -e "$newly_broken" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-            if [ -n "$newly_fixed" ]; then
-              has_changes=true
-              echo ":tada: **Newly fixed:**" >> $GITHUB_STEP_SUMMARY
-              echo -e "$newly_fixed" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-            if [ -n "$newly_added" ]; then
-              has_changes=true
-              echo ":new: **New packages:**" >> $GITHUB_STEP_SUMMARY
-              echo -e "$newly_added" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-            if [ -n "$newly_removed" ]; then
-              has_changes=true
-              echo ":wastebasket: **Removed packages:**" >> $GITHUB_STEP_SUMMARY
-              echo -e "$newly_removed" >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-            if [ "$has_changes" = false ]; then
-              echo "No changes from previous run." >> $GITHUB_STEP_SUMMARY
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
+            find previous-results -name '*.json' -exec cat {} + \
+              | jq -s 'map({name, status}) | INDEX(.name)' > /tmp/previous.json
+          else
+            echo '{}' > /tmp/previous.json
           fi
+
+          # Generate the full summary with a single jq invocation
+          jq -r --slurpfile prev /tmp/previous.json '
+            def counts: group_by(.status) | map({(.[0].status): length}) | add // {};
+            def prev_status(name): ($prev[0][name].status // null);
+
+            counts as $c |
+            length as $total |
+            ($c.success // 0) as $success |
+            ($c.failure // 0) as $failed |
+            ($c.no_solution // 0) as $no_solution |
+            ($c.dependency_failed // 0) as $dep_failed |
+
+            # Diff against previous
+            INDEX(.[]; .name) as $cur_index |
+            [.[] | select(prev_status(.name) == "success" and .status != "success")
+                 | "- `\(.name)` (success -> \(.status))"] as $broken |
+            [.[] | select(prev_status(.name) != null and prev_status(.name) != "success" and .status == "success")
+                 | "- `\(.name)` (\(prev_status(.name)) -> success)"] as $fixed |
+            [.[] | select(prev_status(.name) == null)
+                 | "- `\(.name)` (\(.status))"] as $added |
+            [$prev[0] | to_entries[] | select($cur_index[.key] == null)
+                 | "- `\(.key)` (was \(.value.status))"] as $removed |
+
+            "## Build Results\n",
+            "| Metric | Count |",
+            "|--------|-------|",
+            "| Total packages | \($total) |",
+            "| :white_check_mark: Success | \($success) |",
+            "| :x: Failed | \($failed) |",
+            "| :warning: No solution | \($no_solution) |",
+            "| :fast_forward: Dependency failed | \($dep_failed) |",
+            "",
+            (if $failed > 0 then
+              "<details><summary>Failed packages (\($failed))</summary>\n",
+              "| Package | Log (last 5 lines) |",
+              "|---------|-----|",
+              (.[] | select(.status == "failure")
+                   | "| `\(.name)` | `\(.log | gsub("\\|"; "\\\\|"))` |"),
+              "",
+              "</details>"
+            else empty end),
+            "",
+            (if ($prev[0] | length) > 0 then
+              "## Changes from previous run\n",
+              (if ($broken | length) > 0 then
+                ":rotating_light: **Newly broken:**",
+                $broken[],
+                ""
+              else empty end),
+              (if ($fixed | length) > 0 then
+                ":tada: **Newly fixed:**",
+                $fixed[],
+                ""
+              else empty end),
+              (if ($added | length) > 0 then
+                ":new: **New packages:**",
+                $added[],
+                ""
+              else empty end),
+              (if ($removed | length) > 0 then
+                ":wastebasket: **Removed packages:**",
+                $removed[],
+                ""
+              else empty end),
+              (if ($broken + $fixed + $added + $removed | length) == 0 then
+                "No changes from previous run.",
+                ""
+              else empty end)
+            else empty end),
+            (if $success > 0 then
+              "<details><summary>Successful packages (\($success))</summary>\n",
+              (.[] | select(.status == "success") | "- `\(.name)`"),
+              "",
+              "</details>"
+            else empty end)
+          ' /tmp/current.json >> $GITHUB_STEP_SUMMARY
 
           # Export regression info for the gate step
-          if [ -n "$newly_broken" ]; then
-            echo "has_regressions=true" >> $GITHUB_OUTPUT
-            echo -e "$newly_broken" > /tmp/regressions.txt
-          else
-            echo "has_regressions=false" >> $GITHUB_OUTPUT
-          fi
-
-          if [ "$success" -gt 0 ]; then
-            echo "<details><summary>Successful packages ($success)</summary>" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            for f in results/*.json; do
-              [ -f "$f" ] || continue
-              s=$(jq -r '.status' "$f")
-              if [ "$s" = "success" ]; then
-                name=$(jq -r '.name' "$f")
-                echo "- \`$name\`" >> $GITHUB_STEP_SUMMARY
-              fi
-            done
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "</details>" >> $GITHUB_STEP_SUMMARY
+          has_regressions=$(jq --slurpfile prev /tmp/previous.json '
+            [.[] | select(($prev[0][.name].status // null) == "success" and .status != "success")]
+            | if length > 0 then "true" else "false" end
+          ' /tmp/current.json -r)
+          echo "has_regressions=$has_regressions" >> $GITHUB_OUTPUT
+          if [ "$has_regressions" = "true" ]; then
+            jq -r --slurpfile prev /tmp/previous.json '
+              [.[] | select(($prev[0][.name].status // null) == "success" and .status != "success")
+                   | "- \(.name) (success -> \(.status))"] | .[]
+            ' /tmp/current.json > /tmp/regressions.txt
           fi
 
       - name: Check for regressions
