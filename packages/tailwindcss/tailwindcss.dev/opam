@@ -27,5 +27,5 @@ available: [
 ]
 
 url {
-  src: "git+https://github.com/tmattio/opam-tailwindcss#d6f28c705390efd7a1fe8bfb9eb48e75f50b57ab"
+  src: "git+https://github.com/tmattio/opam-tailwindcss#e5bb6361a50c7cc5cad802311e609336583ca08f"
 }
