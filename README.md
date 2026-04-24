@@ -21,6 +21,7 @@ A test opam overlay repository for use with [braid](https://github.com/mtelvers/
 | `ocaml-slurm.dev` | OCaml client library for Slurm REST API |
 | `octopus_energy.dev` | OCaml library and CLI for Octopus Energy API |
 | `onnxruntime.0.1.0` | OCaml bindings to ONNX Runtime via C shim |
+| `onnxruntime.dev` | OCaml bindings to ONNX Runtime via C shim |
 | `opam-hub.0.1.0` | Gated opam overlay repository server |
 | `png.dev` | Pure OCaml PNG library |
 | `prometheus-app.dev` | Report metrics for Prometheus using Cohttp and Eio |
