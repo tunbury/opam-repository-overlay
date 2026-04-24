@@ -12,6 +12,7 @@ A test opam overlay repository for use with [braid](https://github.com/mtelvers/
 | `conf-arrow.1` | Virtual package relying on an Apache Arrow system installation |
 | `conf-gdal.1` | Virtual package relying on a GDAL system installation |
 | `conf-onnxruntime.1` | Virtual package relying on an ONNX Runtime system installation |
+| `day10-tui.dev` | Terminal UI for browsing CI build results from GitHub Actions |
 | `dpixel.dev` | Tessera dpixel tool in OCaml |
 | `dream-encoding.dev` | Encoding primitives for Dream |
 | `embeddings-size.0.1.0` | synopsis: |
