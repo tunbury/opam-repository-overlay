@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "Mark Elvers <mark@tarides.com>"
+authors: ["Blosc Development Team"]
+homepage: "https://www.blosc.org/"
+bug-reports: "https://github.com/ocaml/opam-repository/issues"
+license: "BSD-3-Clause"
+build: [["pkg-config" "blosc"]]
+depends: ["conf-pkg-config" {build}]
+depexts: [
+  ["libblosc-dev"] {os-family = "debian"}
+  ["libblosc-dev"] {os-family = "ubuntu"}
+  ["blosc-devel"] {os-family = "fedora" | os-family = "rhel" | os-family = "centos"}
+  ["blosc-devel"] {os-family = "suse" | os-family = "opensuse"}
+  ["c-blosc-dev"] {os-distribution = "alpine"}
+  ["blosc"] {os-family = "arch" | os-family = "archlinux"}
+  ["sci-libs/c-blosc"] {os-family = "gentoo"}
+  ["blosc"] {os = "freebsd" | os = "dragonfly" | os = "netbsd" | os = "openbsd"}
+  ["c-blosc"] {os = "macos" & os-distribution = "homebrew"}
+  ["c-blosc"] {os = "macos" & os-distribution = "macports"}
+]
+synopsis: "Virtual package relying on a Blosc system installation"
+description:
+  "This package can only install if the Blosc C library is installed on the system."
+flags: conf

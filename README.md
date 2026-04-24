@@ -47,6 +47,7 @@ opam repository remove tunbury-overlay
 | `braid.0.1.0` | Build status tracker for opam overlay repositories |
 | `braid.dev` | Build status tracker for opam overlay repositories |
 | `conf-arrow.1` | Virtual package relying on an Apache Arrow system installation |
+| `conf-blosc.1` | Virtual package relying on a Blosc system installation |
 | `conf-gdal.1` | Virtual package relying on a GDAL system installation |
 | `conf-onnxruntime.1` | Virtual package relying on an ONNX Runtime system installation |
 | `day10-tui.dev` | Terminal UI for browsing CI build results from GitHub Actions |
