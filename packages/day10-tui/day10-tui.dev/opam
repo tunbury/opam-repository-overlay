@@ -13,7 +13,7 @@ bug-reports: "https://github.com/mtelvers/day10-tui/issues"
 depends: [
   "dune" {>= "3.18"}
   "ocaml" {>= "5.1"}
-  "notty"
+  "notty-community"
   "yojson"
   "cmdliner"
   "odoc" {with-doc}
@@ -36,5 +36,5 @@ dev-repo: "git+https://github.com/mtelvers/day10-tui.git"
 x-maintenance-intent: ["(latest)"]
 
 url {
-  src: "git+https://github.com/mtelvers/day10-tui#2fb444f7f6532297396b3986313f828621871dc1"
+  src: "git+https://github.com/mtelvers/day10-tui#a14c95bb825ee4d9c99133017e4bb3a13ca9d05c"
 }
