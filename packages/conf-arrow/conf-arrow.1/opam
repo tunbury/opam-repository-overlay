@@ -23,7 +23,7 @@ build: [
 ]
 depends: ["conf-pkg-config" {build}]
 depexts: [
-  ["libarrow-devel" "libparquet-devel"] {os-family = "fedora"}
+  ["libarrow-devel" "libparquet-libs-devel"] {os-family = "fedora"}
   ["libarrow-devel" "libparquet-devel"] {os-family = "suse" | os-family = "opensuse"}
   ["apache-arrow-dev"] {os-distribution = "alpine"}
   ["arrow"] {os-family = "arch" | os-family = "archlinux"}
