@@ -11,7 +11,7 @@ depexts: [
   ["libblosc-dev"] {os-family = "ubuntu"}
   ["blosc-devel"] {os-family = "fedora" | os-family = "rhel" | os-family = "centos"}
   ["blosc-devel"] {os-family = "suse" | os-family = "opensuse"}
-  ["c-blosc-dev"] {os-distribution = "alpine"}
+  ["blosc-dev"] {os-distribution = "alpine"}
   ["blosc"] {os-family = "arch" | os-family = "archlinux"}
   ["sci-libs/c-blosc"] {os-family = "gentoo"}
   ["blosc"] {os = "freebsd" | os = "dragonfly" | os = "netbsd" | os = "openbsd"}
