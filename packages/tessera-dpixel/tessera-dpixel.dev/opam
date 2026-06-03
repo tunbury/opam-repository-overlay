@@ -35,5 +35,5 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-tessera.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-tessera#7d2709722e8b8c7f53e18cb12dee991bfa19eeb3"
+  src: "git+https://github.com/mtelvers/ocaml-tessera#84c23a2569e2c972a44eb79b16363327e9ed61a6"
 }
