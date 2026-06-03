@@ -76,6 +76,7 @@ opam repository remove tunbury-overlay
 | `stac_server.dev` | GeoTessera STAC API server and sync tool |
 | `tailwindcss.dev` | TailwindCSS prebuild command line on opam |
 | `tessera-dpixel.dev` | Tessera dpixel tool in OCaml |
+| `tessera-mosaic.dev` | Geo-correct mosaic of Tessera 0.1-degree embedding tiles |
 | `tessera-pipeline.dev` | Tessera Pipeline in OCaml |
 | `tiff.dev` | Pure OCaml TIFF/GeoTIFF library |
 | `wav.dev` | Pure OCaml WAV (RIFF/WAVE) audio file reader and writer |
