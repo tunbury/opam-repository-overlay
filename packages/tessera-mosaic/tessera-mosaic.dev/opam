@@ -33,5 +33,5 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/tessera-mosaic.git"
 
 url {
-  src: "git+https://github.com/mtelvers/tessera-mosaic#3bd58d0cab9dd1c9f8a0b210f4cc90b5a9ef5dc4"
+  src: "git+https://github.com/mtelvers/tessera-mosaic#e7f614c3be8df3e3395a88b42b8037bce1ee55e6"
 }
