@@ -65,7 +65,10 @@ opam repository remove tunbury-overlay
 | `onnxruntime.dev` | OCaml bindings to ONNX Runtime via C shim |
 | `opam-hub.0.1.0` | Gated opam overlay repository server |
 | `png.dev` | Pure OCaml PNG library |
-| `prometheus-app.dev` | Report metrics for Prometheus using Cohttp and Eio |
+| `prometheus-app.dev` | Client library for Prometheus monitoring |
+| `prometheus-cohttp.dev` | Backend-agnostic cohttp serving for Prometheus monitoring |
+| `prometheus-eio.dev` | Eio support for Prometheus monitoring |
+| `prometheus-lwt.dev` | Lwt support for Prometheus monitoring |
 | `prometheus.dev` | Client library for Prometheus monitoring |
 | `repo_tool.dev` | Generate opam repository from git repositories |
 | `smtpd.dev` | An SMTP server implemented in OCaml |
