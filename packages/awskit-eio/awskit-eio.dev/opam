@@ -47,5 +47,5 @@ dev-repo: "git+https://github.com/abdufelsayed/awskit.git"
 x-maintenance-intent: ["(latest)"]
 
 url {
-  src: "git+https://github.com/mtelvers/awskit#ec732daf03b07c283a4211f4176f9920d5ffb238"
+  src: "git+https://github.com/mtelvers/awskit#3af28a5db5120ac54183039c0456419dfbaeb040"
 }
