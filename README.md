@@ -44,6 +44,16 @@ opam repository remove tunbury-overlay
 | Package | Description |
 |---------|-------------|
 | `arrow.dev` | Bindings for Apache Arrow and Parquet |
+| `awskit-eio.dev` | Eio runtime adapter for Awskit |
+| `awskit-lwt-unix.dev` | Lwt Unix runtime adapter for Awskit |
+| `awskit-lwt.dev` | Lwt runtime adapter for Awskit |
+| `awskit-s3-eio.dev` | Eio adapter for Awskit S3 |
+| `awskit-s3-lwt-unix.dev` | Lwt Unix adapter for Awskit S3 |
+| `awskit-s3-lwt.dev` | Lwt adapter for Awskit S3 |
+| `awskit-s3-sim.dev` | In-memory simulator for Awskit S3 tests |
+| `awskit-s3.dev` | S3 client core — objects, buckets, multipart, and policies |
+| `awskit-unix.dev` | Unix helpers for Awskit |
+| `awskit.dev` | AWS infrastructure — signing, credentials, endpoints, and core types |
 | `braid.0.1.0` | Build status tracker for opam overlay repositories |
 | `braid.dev` | Build status tracker for opam overlay repositories |
 | `conf-arrow.1` | Virtual package relying on an Apache Arrow system installation |
