@@ -82,6 +82,7 @@ opam repository remove tunbury-overlay
 | `prometheus.dev` | Client library for Prometheus monitoring |
 | `repo_tool.dev` | Generate opam repository from git repositories |
 | `s3.dev` | S3 client for OCaml using Eio |
+| `s3cli.dev` | Command-line S3 / Ceph RGW client |
 | `smtpd.dev` | An SMTP server implemented in OCaml |
 | `solver-service-api.dev` | Cap'n Proto API for the solver service |
 | `solver-service.dev` | Choose package versions to test |
