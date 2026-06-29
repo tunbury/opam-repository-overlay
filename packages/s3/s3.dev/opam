@@ -44,5 +44,5 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-s3#2629f8b69b7abf7bb882c77fd4fc95186006c001"
+  src: "git+https://github.com/mtelvers/ocaml-s3#e24c0a16756227ae9caa0fb5cd4b73d0efb7aeae"
 }
