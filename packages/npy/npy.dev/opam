@@ -31,5 +31,5 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-npy.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-npy#b9a913c10fe08cb05708904fe199044b69f35fe9"
+  src: "git+https://github.com/mtelvers/ocaml-npy#b67ea34932f11e5527851ca6202f422341381e97"
 }
