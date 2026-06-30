@@ -9,10 +9,13 @@ license: "MIT"
 homepage: "https://github.com/mtelvers/tessera-mosaic"
 bug-reports: "https://github.com/mtelvers/tessera-mosaic/issues"
 depends: [
-  "ocaml" {>= "4.14"}
+  "ocaml" {>= "5.1"}
   "dune" {>= "3.0" & >= "3.0"}
   "gdal"
   "npy"
+  "eio"
+  "eio_main"
+  "s3"
   "cmdliner" {>= "2.0"}
   "odoc" {with-doc}
 ]
@@ -33,5 +36,5 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/tessera-mosaic.git"
 
 url {
-  src: "git+https://github.com/mtelvers/tessera-mosaic#e7f614c3be8df3e3395a88b42b8037bce1ee55e6"
+  src: "git+https://github.com/mtelvers/tessera-mosaic#55d3eb5608ca42dd6fb82d69ace1babe8a85507e"
 }
