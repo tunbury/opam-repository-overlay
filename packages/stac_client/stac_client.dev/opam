@@ -32,5 +32,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/stac-client.git"
 
 url {
-  src: "git+https://github.com/mtelvers/stac-client#24804eab0f8951897d31b8089c1603ec438230d3"
+  src: "https://github.com/mtelvers/stac-client/archive/24804eab0f8951897d31b8089c1603ec438230d3.tar.gz"
+  checksum: [
+    "sha256=b6f558c0edf3009cd3e5498a80f0d51a38ce254b82d1b90c47710395d958910f"
+    "sha512=28e4182be712a0f703def7cf9dc9b49a9b531ed945de30f57e6495bcb4686d41235cd62590dc97b8cf7ac0b665e5ed60649cfdc2678bd659068ceaac2a357047"
+  ]
 }

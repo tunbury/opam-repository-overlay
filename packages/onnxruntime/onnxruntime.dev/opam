@@ -24,5 +24,9 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-onnxruntime#a16c0bd471c7a2257c20109274c3d5f6fee2eae3"
+  src: "https://github.com/mtelvers/ocaml-onnxruntime/archive/a16c0bd471c7a2257c20109274c3d5f6fee2eae3.tar.gz"
+  checksum: [
+    "sha256=91f50f066cbf21585c3ef2065bb7c4fd3430e3ee078ecc80b988d8c93fd5c561"
+    "sha512=e67ae02084b783d8be4436732df00cb6b08cdf24bc18083e4ec8e0d1b3da40db71b4827852b046ba8e34809ee55f4d19b5efdada77eb5f4e80d8211825d9a2d1"
+  ]
 }

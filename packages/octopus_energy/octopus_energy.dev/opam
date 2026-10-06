@@ -41,5 +41,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-octopus-energy.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-octopus-energy#25d32e2b9bb18d1df5a149e5634b0cdde8afc737"
+  src: "https://github.com/mtelvers/ocaml-octopus-energy/archive/25d32e2b9bb18d1df5a149e5634b0cdde8afc737.tar.gz"
+  checksum: [
+    "sha256=50eb05d8098a0bde3454cb678ecc819c391caa5b02c130d6e9857a1c89b7473c"
+    "sha512=15a139bd3b90c550f3d396625841173d5bcb933bd7cfbb7e95131a10091e6bc4183973b9722474b0bcf556e23e5a087c9e1918a2f842e7d1e907798113fe150f"
+  ]
 }

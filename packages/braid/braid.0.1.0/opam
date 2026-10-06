@@ -41,5 +41,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/braid.git"
 
 url {
-  src: "git+https://github.com/mtelvers/braid#0ea2907143a6ee54aa60c86f55fa753960afed4a"
+  src: "https://github.com/mtelvers/braid/archive/0ea2907143a6ee54aa60c86f55fa753960afed4a.tar.gz"
+  checksum: [
+    "sha256=b97a16676d2e6e8be9390e1ac19903fe72e1d07e9d0f64b73271070b59be3fc0"
+    "sha512=8db9c7344aba5987b78683a0db4f0c53e0bf606a31e5cca90ac55b2bdde88be76381252704d32cf52fb7d5b568478a6131cc651fc2972894e87981021a587bfa"
+  ]
 }

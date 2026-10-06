@@ -51,5 +51,9 @@ build: [
 dev-repo: "git+https://github.com/ocurrent/solver-service.git"
 
 url {
-  src: "git+https://github.com/ocurrent/solver-service#f14bc6fdb22c1cef45bb3d3589bd778f4d6c8196"
+  src: "https://github.com/ocurrent/solver-service/archive/f14bc6fdb22c1cef45bb3d3589bd778f4d6c8196.tar.gz"
+  checksum: [
+    "sha256=b25db625628783bf4a2adc2367b961e313477917b47dfd820a4f5aaf7c253173"
+    "sha512=c07123347379376ecd0c1e9234f1797b655bea430460e7173ba26bf7cd0ce93a9994f685577070c10257b469ad91265af6823eb7dfa8a0ff0f7753fb41f17cb7"
+  ]
 }

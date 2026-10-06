@@ -14,5 +14,9 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-gdal#3a9c36265a13bd637cf1a5edef2edca471f216ce"
+  src: "https://github.com/mtelvers/ocaml-gdal/archive/3a9c36265a13bd637cf1a5edef2edca471f216ce.tar.gz"
+  checksum: [
+    "sha256=e05fd49fde91fed93468f9e1b9f8d1cae90f82571b6f2ae34bfcd46ae978f89f"
+    "sha512=95c51e5e4371c7ac8ce327b0ef57d9b44527b8255c396491b9ad001abe45eaa4841ac8f61d7ef91da9b9be2f89457ced50e25432b319e2575f2b8a916987b161"
+  ]
 }

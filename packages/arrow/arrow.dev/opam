@@ -37,5 +37,9 @@ dev-repo: "git+https://github.com/mtelvers/arrow.git"
 x-maintenance-intent: ["(latest)"]
 
 url {
-  src: "git+https://github.com/mtelvers/arrow#0630cc3b0d57b07a7b985cdb0816cc4fe607ad7e"
+  src: "https://github.com/mtelvers/arrow/archive/0630cc3b0d57b07a7b985cdb0816cc4fe607ad7e.tar.gz"
+  checksum: [
+    "sha256=7b49fba7a8cad15e1ef870d9b07c45e2736af8b11776d27e0d2aed5b0976423f"
+    "sha512=ac3a13fd3c0b57d4fa43e02eafab0f59d8a42d0ce26fe4d86536b9ebd9fcf79c8372eef2680dde5abaa14f9cc803585e29c4d955c1842b2542e04944a6c6dd6e"
+  ]
 }

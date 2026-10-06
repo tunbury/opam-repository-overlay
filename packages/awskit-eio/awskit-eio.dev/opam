@@ -47,5 +47,9 @@ dev-repo: "git+https://github.com/abdufelsayed/awskit.git"
 x-maintenance-intent: ["(latest)"]
 
 url {
-  src: "git+https://github.com/mtelvers/awskit#7e6dc548726a3853f388a32958c6b4b5c9815ecd"
+  src: "https://github.com/mtelvers/awskit/archive/7e6dc548726a3853f388a32958c6b4b5c9815ecd.tar.gz"
+  checksum: [
+    "sha256=071a83fbc7a54ee2cbaa7735171d7d4e7a35864583213145997dcebb4882c40d"
+    "sha512=50ce6f6829f7089564babaea9a88b270b2741862c58e2bb22df05cfba0b45f7a6de292fd754faace680bb7c9812973dd679ca505ddee0f7ac8ebbea5b53cf30b"
+  ]
 }

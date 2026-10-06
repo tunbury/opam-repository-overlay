@@ -23,5 +23,9 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/mtelvers/tessera-tiles.git#e000e6a91d461ce5c6c8971a7306a57ee8339ad2"
+  src: "https://github.com/mtelvers/tessera-tiles/archive/e000e6a91d461ce5c6c8971a7306a57ee8339ad2.tar.gz"
+  checksum: [
+    "sha256=8b6c34eddd8b6a5f176b4e1cef4f21d5670f0b84e9ee844d24af4e4dfab91100"
+    "sha512=bc68f8ac4744186361c4947d2d5199ab1efdf3e654a2fd231e4a15451b0f92d59e9f9a133363c8e7b94225217a6e6c1feda752cc3659e87cacfe5b2589264c27"
+  ]
 }

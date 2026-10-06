@@ -31,5 +31,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-npy.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-npy#a6e684676431607d31e19e4455ab84cf203f6266"
+  src: "https://github.com/mtelvers/ocaml-npy/archive/a6e684676431607d31e19e4455ab84cf203f6266.tar.gz"
+  checksum: [
+    "sha256=9c7ee503270409e61620f67d3888a4a374103cc7444b5984fc4cf58f26202432"
+    "sha512=eb3b749af168f0788b2061044a05ae2e178f58002c088844f98ea81836819a811a96fe6406d5f15c05a834b93258c4454c216aece8f65af940948a7df81e9579"
+  ]
 }

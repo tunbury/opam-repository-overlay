@@ -36,5 +36,9 @@ conflicts: [
 ]
 
 url {
-  src: "git+https://github.com/samoht/dream-encoding#bc3863b2d33376d0fa9b878c8b52d2e1cfb8c0d9"
+  src: "https://github.com/samoht/dream-encoding/archive/bc3863b2d33376d0fa9b878c8b52d2e1cfb8c0d9.tar.gz"
+  checksum: [
+    "sha256=e3cbb51d91eb7844b2b9d42135cc5c691d96c9f9db395256e022f63dba68ebcd"
+    "sha512=d7cf0ab11e3b90544da27ce5e00f80c485275e9f132047058ac5b6a4423be4c98338bfd92bfb07a7a6c2a90d4e19358103241336ba98af3846efcd3f7a1437bf"
+  ]
 }

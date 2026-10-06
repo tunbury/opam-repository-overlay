@@ -50,5 +50,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-smtpd.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-smtpd#711d6a7b0fc72ed10e4f7884094b85e1f5a56438"
+  src: "https://github.com/mtelvers/ocaml-smtpd/archive/711d6a7b0fc72ed10e4f7884094b85e1f5a56438.tar.gz"
+  checksum: [
+    "sha256=29206ea87540440418c3d726b128901d0d8dd00e6f06a568c219383caf292f9d"
+    "sha512=08dd3afda172eb61efb1802995c7a733c62c3f7657a5999431b50f879d904ba1a422020c31f6d295f4875cb5cb42ac385d05ede1cac5f374fc17b8026b66eb5f"
+  ]
 }

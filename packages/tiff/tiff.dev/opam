@@ -31,5 +31,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-tiff.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-tiff#fd2f5055d7ee170eae6b0d2ea8480c6d5bf2ff17"
+  src: "https://github.com/mtelvers/ocaml-tiff/archive/fd2f5055d7ee170eae6b0d2ea8480c6d5bf2ff17.tar.gz"
+  checksum: [
+    "sha256=d7714104d8cd9fe1b7a75ee2b0e1a2e62f5b75ddac1ec8b67e61399810276bd2"
+    "sha512=b4c0d70d90bb4dbf31c3634ae89e43470536d80c8d1ce2d6cb6d885e2c0965bc51efa38309a092cd23ab4568fa4ce643f7ca2e5be7fd27335caf3425a41f40ed"
+  ]
 }

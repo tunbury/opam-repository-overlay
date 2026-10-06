@@ -32,5 +32,9 @@ build: [
 dev-repo: "git+https://github.com/user/ocaml-mp3.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-mp3#1f63c7da9ad355d29c4e0a912d8de8fe17eeeb2e"
+  src: "https://github.com/mtelvers/ocaml-mp3/archive/1f63c7da9ad355d29c4e0a912d8de8fe17eeeb2e.tar.gz"
+  checksum: [
+    "sha256=ff908ae93eaec04f4f532118359a1a268f20e42273e2056ea509c1b4e728f9ba"
+    "sha512=99ef1a6bafac06e7bf7b6943481e8f590907c42810fe2bbcd701caf04d93d4d7d785befdf2840fe37040c288068953fc61c0a44fd558b87e7a45a2d6a4162222"
+  ]
 }

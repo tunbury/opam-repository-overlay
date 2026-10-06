@@ -44,5 +44,9 @@ build: [
 ]
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-s3#aa7992e6a6687923c79e9feb04f45bce98fbd027"
+  src: "https://github.com/mtelvers/ocaml-s3/archive/aa7992e6a6687923c79e9feb04f45bce98fbd027.tar.gz"
+  checksum: [
+    "sha256=91ba2fa9a865a00655f71a0ca5e4fa76750cf7db679ad61a8b8a6f88b9717860"
+    "sha512=2e124856042ad56a074746a53931b3a2c3c272e79f59050a2c09b01c3fa96d2c268e2eb5ece096a6626e8fa804dd7b1056095f5cea686a03887e4c14bd390636"
+  ]
 }

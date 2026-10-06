@@ -39,5 +39,9 @@ dev-repo: "git+https://github.com/mtelvers/ocaml-slurm.git"
 x-maintenance-intent: ["(latest)"]
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-slurm#5f992ca8e93602ed71e38573444df95828a5912e"
+  src: "https://github.com/mtelvers/ocaml-slurm/archive/5f992ca8e93602ed71e38573444df95828a5912e.tar.gz"
+  checksum: [
+    "sha256=45b3ce02f9238e3bc54e3987e5c619c68885b5506b65a01559b67cbee7180e27"
+    "sha512=167b8c803202c87e184b40c83f06e24ecba64d45694af5f3c23609eff7002686247f20995c90a3e6654684ba1098085dcadc11f031af739ee7904b72acb69f25"
+  ]
 }

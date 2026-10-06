@@ -31,5 +31,9 @@ pin-depends: [
 ]
 
 url {
-  src: "git+https://github.com/mtelvers/stac-server#5a6cf10230d589b7cc2b8cb3932e357c04e7cfd8"
+  src: "https://github.com/mtelvers/stac-server/archive/5a6cf10230d589b7cc2b8cb3932e357c04e7cfd8.tar.gz"
+  checksum: [
+    "sha256=dcba8ae2f155c2db66403ffc2a710d53ff32fc9847a7482fbafb6e376b470be6"
+    "sha512=e0ea5a7f1de81e1b2eab9e9d6a5a732d7e539e1c55544181402cfd9a66f73ce86f7731c13a1869342946316ee5efd0ef776064e9a120b0e18aa3ad206d2d306c"
+  ]
 }

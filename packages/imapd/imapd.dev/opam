@@ -41,5 +41,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/imapd.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-imapd#a2d296ae8a3004d134e11d6a210f10ede26620f0"
+  src: "https://github.com/mtelvers/ocaml-imapd/archive/a2d296ae8a3004d134e11d6a210f10ede26620f0.tar.gz"
+  checksum: [
+    "sha256=6762a00e8d215f1334cd1cb65edfaced04936bcb4dd63eba870569eb1b3dd314"
+    "sha512=b9c873d986e986e23e02acbeeb7a9244f2ebb5e0f19670c77560925765f5543bc5b14caac9574c4dd43cc5248f03eba79ff8383bd7a8f9211db1610f2c28f160"
+  ]
 }

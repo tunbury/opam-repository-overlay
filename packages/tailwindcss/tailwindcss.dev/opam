@@ -27,5 +27,9 @@ available: [
 ]
 
 url {
-  src: "git+https://github.com/tmattio/opam-tailwindcss#e5bb6361a50c7cc5cad802311e609336583ca08f"
+  src: "https://github.com/tmattio/opam-tailwindcss/archive/e5bb6361a50c7cc5cad802311e609336583ca08f.tar.gz"
+  checksum: [
+    "sha256=c7219f7897d2bcb6bfc65346d9e75813ec461b98d73ed8daca5a9e7c58b65b38"
+    "sha512=764e5d0aacbcc669de54278ab6675238bc8cede9936217fc398200315d89213d12e2a00a8d87f339fe310399403bd112c68b918cbbebb358ec201909d2826d24"
+  ]
 }

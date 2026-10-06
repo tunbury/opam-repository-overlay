@@ -30,5 +30,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/embeddings-size.git"
 
 url {
-  src: "git+https://github.com/mtelvers/embedding-size#3d16225ad0047db2b82321f5c4560cf68bc5b987"
+  src: "https://github.com/mtelvers/embedding-size/archive/3d16225ad0047db2b82321f5c4560cf68bc5b987.tar.gz"
+  checksum: [
+    "sha256=fa821d467b2ba136b53d046b0568a80dda69c042710023e69ccf28641bb6f09e"
+    "sha512=1d94ffdf419ad77b64b63bdedc7086c9913994172af29cd54f040839066537f1159983cc0aad7c28da3859d620e206b05276f24a1ed1c067c6779d1b7229fa9e"
+  ]
 }

@@ -36,5 +36,9 @@ dev-repo: "git+https://github.com/mtelvers/day10-tui.git"
 x-maintenance-intent: ["(latest)"]
 
 url {
-  src: "git+https://github.com/mtelvers/day10-tui#a14c95bb825ee4d9c99133017e4bb3a13ca9d05c"
+  src: "https://github.com/mtelvers/day10-tui/archive/a14c95bb825ee4d9c99133017e4bb3a13ca9d05c.tar.gz"
+  checksum: [
+    "sha256=f9089fb8f8538f9b1761173e5f7cdd5be7079897f68117677f0cafc928b5c379"
+    "sha512=28ef064b36d1ea90c228ed28b9a48a516f5dd27d4c95f02fd6f69b2627ac53bedfda19fd01e55f3dde46c4e1f99e416ce48ad01b893e2b22b8d862166ddc61af"
+  ]
 }

@@ -35,5 +35,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-tessera.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-tessera#84c23a2569e2c972a44eb79b16363327e9ed61a6"
+  src: "https://github.com/mtelvers/ocaml-tessera/archive/84c23a2569e2c972a44eb79b16363327e9ed61a6.tar.gz"
+  checksum: [
+    "sha256=f2e7f306b05ada812ece159dce674c1cf94b6410acd5de9928690b138ffe7036"
+    "sha512=55e5a71bd978a01cc6d6aef89970147f6ff3042d2573d41df2c1e44b17af7b397fd7916eb5d9a5aaa86b10e5e9a7bd2dbda1651e0bb14c2b1b928f9aba9b1e59"
+  ]
 }

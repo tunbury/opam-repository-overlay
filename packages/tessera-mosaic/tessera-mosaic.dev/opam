@@ -39,5 +39,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/tessera-mosaic.git"
 
 url {
-  src: "git+https://github.com/mtelvers/tessera-mosaic#cefc839c1d464efb3acdbf2d4d304bc0bde1949d"
+  src: "https://github.com/mtelvers/tessera-mosaic/archive/cefc839c1d464efb3acdbf2d4d304bc0bde1949d.tar.gz"
+  checksum: [
+    "sha256=58fc422a5216f4a82d24303dcb387852f5cff3443d546f9974fc5048dd598085"
+    "sha512=adcac7d3dd5023e5606434281cc9493244b809ad02514b790d1b850380024137f68764cbf62c7f241463390d1ebc81d448eaea7958756f1bef21513b128f1047"
+  ]
 }

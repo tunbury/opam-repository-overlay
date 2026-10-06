@@ -31,5 +31,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/repo-tool.git"
 
 url {
-  src: "git+https://github.com/mtelvers/repo-tool#36817943c08d03613aeb0a6a164fc6a1d9a2e335"
+  src: "https://github.com/mtelvers/repo-tool/archive/36817943c08d03613aeb0a6a164fc6a1d9a2e335.tar.gz"
+  checksum: [
+    "sha256=26a8c7a40da5262b713154c5d9b162d04848470e6bed5485dd899a783bca645a"
+    "sha512=99daf78c4245f9610dea5e973eaaaef62a16f62c8a2fe058ef20f0f6e7e82110436cc075795e7d724689cc958d67369f075dc80c391aa5da1cc9d88add8c2506"
+  ]
 }

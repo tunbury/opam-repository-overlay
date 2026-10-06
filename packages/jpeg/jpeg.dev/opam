@@ -32,5 +32,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-jpeg.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-jpeg#495273c88482bfbe93fa1d2b3ddb7db81afc6cfd"
+  src: "https://github.com/mtelvers/ocaml-jpeg/archive/495273c88482bfbe93fa1d2b3ddb7db81afc6cfd.tar.gz"
+  checksum: [
+    "sha256=90aa80d40ddde98d555b25dd8729267bfafca4e1e7bcff263e7e8ff823b0004e"
+    "sha512=2d6deec5dbe058f93db8d1a53079adbb45b3ed791bbc904a3c1566a3a5715c2284285fe59714aa4bbcaceb250a14360aabae3e79bef764bc08deed8f8028eb25"
+  ]
 }

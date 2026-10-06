@@ -46,5 +46,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/opam-hub.git"
 
 url {
-  src: "git+https://github.com/mtelvers/opam-hub#3010e29addf203756a701e4d1bb7955ddd37cabb"
+  src: "https://github.com/mtelvers/opam-hub/archive/3010e29addf203756a701e4d1bb7955ddd37cabb.tar.gz"
+  checksum: [
+    "sha256=68f605eec499f86607d4c82bfd0a39eb8178d1cf233d327d77f84cf21f487a3c"
+    "sha512=3d2c649120f6144cb5c56a518c70cb40ac929aa5c30ba09d7e3c070c3b75d67886d0dcd0be93c7d0c5df9b4cd4b3a47016c4613b30a9b911e1aa99fe67db1ae6"
+  ]
 }

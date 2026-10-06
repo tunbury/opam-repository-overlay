@@ -36,5 +36,9 @@ build: [
 dev-repo: "git+https://github.com/patricoferris/hilite.git"
 
 url {
-  src: "git+https://github.com/patricoferris/hilite#082d846212deb1573a35961fd69cfcbbb436f663"
+  src: "https://github.com/patricoferris/hilite/archive/082d846212deb1573a35961fd69cfcbbb436f663.tar.gz"
+  checksum: [
+    "sha256=7501f7171e85e675c418a63f59ac470eef9ec0b3b65a922c0cb7096ee8bc2164"
+    "sha512=e8306a00a8e529feb04034f625a6282c3d3eb342b55e815e123da1b4055efae9e7a38a812b9eec25d8b8aed08e2b44cc941e9c5b7bd1ecdad9e617beee504a15"
+  ]
 }
