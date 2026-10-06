@@ -38,5 +38,5 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-zarr.git"
 
 url {
-  src: "git+https://github.com/mtelvers/ocaml-zarr#0733cc9795a3c17fd8e28b2c2602c6a88d9df9e3"
+  src: "git+https://github.com/mtelvers/ocaml-zarr#74b187474599a9611ddb2a9113f5ffa9c13823aa"
 }

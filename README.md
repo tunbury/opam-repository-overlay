@@ -99,6 +99,7 @@ opam repository remove tunbury-overlay
 | `wav.dev` | Pure OCaml WAV (RIFF/WAVE) audio file reader and writer |
 | `zarr-blosc.0.1.0` | Blosc codec for Zarr - high-performance meta-compressor |
 | `zarr-eio.0.1.0` | Eio-based async store implementations for Zarr |
+| `zarr-s3.0.1.0` | S3 object store backend for Zarr |
 | `zarr-sync.0.1.0` | Synchronous store implementations for Zarr |
 | `zarr.0.1.0` | Pure OCaml implementation of Zarr v3 |
 
