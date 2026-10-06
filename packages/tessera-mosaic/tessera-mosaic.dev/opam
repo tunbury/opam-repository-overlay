@@ -16,6 +16,9 @@ depends: [
   "eio"
   "eio_main"
   "s3"
+  "zarr"
+  "zarr-blosc"
+  "yojson"
   "cmdliner" {>= "2.0"}
   "odoc" {with-doc}
 ]
@@ -36,5 +39,5 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/tessera-mosaic.git"
 
 url {
-  src: "git+https://github.com/mtelvers/tessera-mosaic#b3e2645ed0df3d8e1fd54cb36623bd47cfaeaf65"
+  src: "git+https://github.com/mtelvers/tessera-mosaic#cefc839c1d464efb3acdbf2d4d304bc0bde1949d"
 }
