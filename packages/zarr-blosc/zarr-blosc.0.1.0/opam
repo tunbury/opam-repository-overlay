@@ -32,9 +32,9 @@ build: [
 dev-repo: "git+https://github.com/mtelvers/ocaml-zarr.git"
 
 url {
-  src: "https://github.com/mtelvers/ocaml-zarr/archive/107ddf1404bd3b75721d1005236d2c76f9a4b438.tar.gz"
+  src: "https://github.com/mtelvers/ocaml-zarr/archive/4a9286f68ba6c71144cef22ba3fb4d72ede7d101.tar.gz"
   checksum: [
-    "sha256=465f40c72c3344c87895308214558ff80a5d91dbfeef93460e56df4fecdf46c0"
-    "sha512=5f3e9719e9ea36284ba57ebec4b9f0ba3813521113b9aeedaf39f0545a61168f8a9dbd3b6fcacd0bfd274d79c837ef373a0672a5cd0144ef3efd6fbd476f911c"
+    "sha256=0c88162908f8e8805316ee59ee591baa99bf4a6f87657a9aaa90d7fc06fe3b1a"
+    "sha512=47e3d94fb4b58d944428d911f45d68994eea1dc6397c8cc3ed6d3575d50cc15db0840fc8d888933326794456e7f265c579d688134dc1059c290a835c31709186"
   ]
 }
